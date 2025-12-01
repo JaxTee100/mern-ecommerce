@@ -1,6 +1,6 @@
-const Order = require("../../models/Order");
-const Product = require("../../models/Product");
-const ProductReview = require("../../models/Review");
+const Order = require('../../models/Order');
+const Product = require('../../models/Product');
+const ProductReview = require('../../models/Review');
 
 const addProductReview = async (req, res) => {
   try {
@@ -9,14 +9,14 @@ const addProductReview = async (req, res) => {
 
     const order = await Order.findOne({
       userId,
-      "cartItems.productId": productId,
+      'cartItems.productId': productId,
       // orderStatus: "confirmed" || "delivered",
     });
 
     if (!order) {
       return res.status(403).json({
         success: false,
-        message: "You need to purchase product to review it.",
+        message: 'You need to purchase product to review it.',
       });
     }
 
@@ -28,7 +28,7 @@ const addProductReview = async (req, res) => {
     if (checkExistinfReview) {
       return res.status(400).json({
         success: false,
-        message: "You already reviewed this product!",
+        message: 'You already reviewed this product!',
       });
     }
 
@@ -58,7 +58,7 @@ const addProductReview = async (req, res) => {
     console.log(e);
     res.status(500).json({
       success: false,
-      message: "Error",
+      message: 'Error',
     });
   }
 };
@@ -76,7 +76,7 @@ const getProductReviews = async (req, res) => {
     console.log(e);
     res.status(500).json({
       success: false,
-      message: "Error",
+      message: 'Error',
     });
   }
 };

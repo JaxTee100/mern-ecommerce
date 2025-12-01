@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const ProductReviewSchema = new mongoose.Schema(
   {
@@ -8,7 +8,7 @@ const ProductReviewSchema = new mongoose.Schema(
     reviewMessage: String,
     reviewValue: Number,
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
-module.exports = mongoose.model("ProductReview", ProductReviewSchema);
+module.exports = mongoose.model('ProductReview', ProductReviewSchema);

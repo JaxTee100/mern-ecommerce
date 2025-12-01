@@ -27,6 +27,8 @@ function App() {
   const { user, isAuthenticated, isLoading } = useSelector(
     (state) => state.auth
   );
+
+  let unused = "unused variable";
   const dispatch = useDispatch();
 
   useEffect(() => {

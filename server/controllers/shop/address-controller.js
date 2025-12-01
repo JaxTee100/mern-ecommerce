@@ -1,4 +1,4 @@
-const Address = require("../../models/Address");
+const Address = require('../../models/Address');
 
 const addAddress = async (req, res) => {
   try {
@@ -7,7 +7,7 @@ const addAddress = async (req, res) => {
     if (!userId || !address || !city || !pincode || !phone || !notes) {
       return res.status(400).json({
         success: false,
-        message: "Invalid data provided!",
+        message: 'Invalid data provided!',
       });
     }
 
@@ -30,7 +30,7 @@ const addAddress = async (req, res) => {
     console.log(e);
     res.status(500).json({
       success: false,
-      message: "Error",
+      message: 'Error',
     });
   }
 };
@@ -41,7 +41,7 @@ const fetchAllAddress = async (req, res) => {
     if (!userId) {
       return res.status(400).json({
         success: false,
-        message: "User id is required!",
+        message: 'User id is required!',
       });
     }
 
@@ -55,7 +55,7 @@ const fetchAllAddress = async (req, res) => {
     console.log(e);
     res.status(500).json({
       success: false,
-      message: "Error",
+      message: 'Error',
     });
   }
 };
@@ -68,7 +68,7 @@ const editAddress = async (req, res) => {
     if (!userId || !addressId) {
       return res.status(400).json({
         success: false,
-        message: "User and address id is required!",
+        message: 'User and address id is required!',
       });
     }
 
@@ -78,13 +78,13 @@ const editAddress = async (req, res) => {
         userId,
       },
       formData,
-      { new: true }
+      { new: true },
     );
 
     if (!address) {
       return res.status(404).json({
         success: false,
-        message: "Address not found",
+        message: 'Address not found',
       });
     }
 
@@ -96,7 +96,7 @@ const editAddress = async (req, res) => {
     console.log(e);
     res.status(500).json({
       success: false,
-      message: "Error",
+      message: 'Error',
     });
   }
 };
@@ -107,7 +107,7 @@ const deleteAddress = async (req, res) => {
     if (!userId || !addressId) {
       return res.status(400).json({
         success: false,
-        message: "User and address id is required!",
+        message: 'User and address id is required!',
       });
     }
 
@@ -116,19 +116,19 @@ const deleteAddress = async (req, res) => {
     if (!address) {
       return res.status(404).json({
         success: false,
-        message: "Address not found",
+        message: 'Address not found',
       });
     }
 
     res.status(200).json({
       success: true,
-      message: "Address deleted successfully",
+      message: 'Address deleted successfully',
     });
   } catch (e) {
     console.log(e);
     res.status(500).json({
       success: false,
-      message: "Error",
+      message: 'Error',
     });
   }
 };
