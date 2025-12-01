@@ -4,10 +4,10 @@ name: build-and-lint
 on:
   push:
     branches:
-      - [main, dev]
+      - main
   pull_request:
     branches:
-      - [main, dev]
+      - main
 
 
 # defines the jobs to be run in the workflow
