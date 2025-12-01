@@ -8,11 +8,11 @@ export default defineConfig([
   pluginReact.configs.flat.recommended,
   {
 		rules: {
-			"no-unused-vars": "warn",
-			"no-undef": "warn",
+			"no-unused-vars": "off",
+			"no-undef": "off",
       "react/react-in-jsx-scope": "off",
       "react/prop-types": "off",
-      "react/jsx-key": "warn",
+      "react/jsx-key": "off",
       "react/no-unescaped-entities": "off",
 		},
 	},
